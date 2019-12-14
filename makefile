@@ -1,10 +1,10 @@
-all: run
+all: mains
 
-run: main.o 
-	gcc -o run main.o
+mains: mains.o 
+	gcc -o mains main.o
 
-main.o: main.c
-	gcc -c main.c 
+main.o: mains.c
+	gcc -c mains.c 
 
 .PHONY: clean all
 

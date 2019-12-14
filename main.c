@@ -5,10 +5,11 @@
 int main()
 {
 
-    int speeds[] = {25, 52, 12, 13};
+    int speeds[5] = {25, 52, 12, 13};
 
     // printf("%p  \n" ,&speeds[0] );
     // printf("%p" ,speeds );
+    shift_element(speeds , 5);
 
     int *start1 = &speeds[0];
     int *start2 = &speeds;
