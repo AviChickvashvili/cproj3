@@ -1,12 +1,12 @@
-all: mains
+all: run
 
-mains: mains.o 
-	gcc -o mains main.o
+run: main.o arrays.h
+	gcc -o run arrays.o main.o
 
-main.o: mains.c
-	gcc -c mains.c 
+main.o: main.c arrays.h
+	gcc -c arrays.c main.c 
 
 .PHONY: clean all
 
 clean: 
-	rm -f *.o bank
+	rm -f *.o run
