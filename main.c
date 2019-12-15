@@ -1,27 +1,29 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "arrays.h"
+int avi_arr[LENGTH];
 
 int main()
 {
+    avi_arr[0] = 15;
+    avi_arr[1] = 23;
+    avi_arr[2] = 2;
+    avi_arr[3] = 5;
+    avi_arr[4] = 100;
+    ///////
+    for (int i = 0; i < LENGTH; i++)
+    {
+        printf("%d , ", avi_arr[i]);
+    }
+    int i = 2;
+    int *p = &avi_arr[2];
+    printf("\n*p =[%d] \n i = %d\n", *p, i);
 
-    int speeds[5] = {25, 52, 12, 13};
+    shift_element(p, i);
 
-    // printf("%p  \n" ,&speeds[0] );
-    // printf("%p" ,speeds );
-    shift_element(speeds , 5);
-
-    int *start1 = &speeds[0];
-    int *start2 = &speeds;
-
-    printf("index 0 is - : %p \n", &speeds);
-    printf("index 0 value in HEX is :%p in BIN is :%d \n", *speeds , *speeds);
-
-    printf("index 0 is - : %p \n", &speeds[0]);
-
-    printf("index 0 is - : %p \n", &start1);
-    printf("index 0 value in HEX is :%p in BIN is :%d \n", *start1 , *start1);
-   
-    printf("index 0 is - : %p \n", &start2);
-    printf("index 0 value in HEX is :%p in BIN is :%d \n", *start2,*start2);
+    for (int i = 0; i < LENGTH; i++)
+    {
+        printf("%d , ", avi_arr[i]);
+    }
+    printf("\n");
 }
