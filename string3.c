@@ -9,16 +9,18 @@ void get_line(char s[])
 {
 
     // 'c'
-    char te[] = "cat a\nthis is a text file\nlooking for the word cat\nthe program should print also cats\nand crat and lcat but it shouldn't\nprint cathe word caats";
+    char te[] = "cat a\nthis is a text file\nlooking for the word cat\nthe program should print also cats\nafter cats crat and lcat are printed\nthe program shouldn't\nprint word caats";
 
    
     int index = 0;
     int counter = 0;
- char c = te[index];
-
+    char c = te[index];
+    int line = 0;
+    int col = 0;
     char text[LINE][LINE];
     int i = 0;
     int j = 0;
+    
 
     while (c != EOF)
     {
@@ -38,10 +40,13 @@ void get_line(char s[])
             c = te[index];
             
         }
+        if(col<j)
+        {
+            col=j;
+        }
         i++;
     }
-    int line = i;
-    int col = j;
+    line =i;
     //printing the text
     // for (int p = 0; p < i; p++)
     // {
@@ -90,19 +95,19 @@ void get_line(char s[])
         printf("Opration : %c      line: %d        col: %d\n\n", oper, line, col);
         // printf("%s\n", text[3]);
 
-        for (int x = 1; x < line; x++)
+        for (int x = 0; x < line; x++)
         {
-            for (int z = 0; z < col; z++)
+            for (int z = 0; z < col && text[x][z] !='\0'; z++)
             {
                 int cc = 0;
                 int coun = 0;
-                if (z + 1 < col && text[x][z] == search[0])
+                if (text[x][z] == search[0])
                 {
                     cc++;
                     coun++;
                     z++;
 
-                    while (z + 1 < col && text[x][z] == search[cc])
+                    while (text[x][z] == search[cc] && search[cc]!='\0')
                     {
                         cc++;
                         z++;
@@ -111,7 +116,7 @@ void get_line(char s[])
                     if (coun == size)
                     {
                         oppppp++;
-                        for (int trx = 0; trx < col; trx++)
+                        for (int trx = 0; trx < col && text[x][trx]!='\0' ; trx++)
                         {
                             printf("%c", text[x][trx]);
                         }
