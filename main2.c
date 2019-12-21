@@ -7,18 +7,18 @@ int avi_arr2[LENGTH2];
 int main()
 {
 
+ printf("enter a number to array ");
     int input = 0;
     int counter = 0;
+    
     do
     {
-
-        printf("enter a number to array ");
         //    while (scanf("%d", &input) <= 5)
         //     {
         //  printf("enter a number to array ");
         scanf("%d", &input);
         avi_arr2[counter] = input;
-        while (getchar() != '\n')
+       //while (getchar() != '\n')
             ;
         // counter++;
         // }

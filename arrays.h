@@ -2,7 +2,7 @@
 #define  _arrays_h_
 
 #define LENGTH 5
-#define LENGTH2 5
+#define LENGTH2 50
 extern int avi_arr[LENGTH];
 extern int avi_arr2[LENGTH2];
 

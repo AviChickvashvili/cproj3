@@ -16,8 +16,8 @@ int main()
         printf("%d , ", avi_arr[i]);
     }
     int i = 2;
-    int *p = &avi_arr[2];
-    printf("\n*p =[%d] \n i = %d\n", *p, i);
+    int *p = &avi_arr[0];
+     printf("\n");
 
     shift_element(p, i);
 
